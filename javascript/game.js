@@ -6,7 +6,7 @@ exports.Game = function() {
   var purses           = new Array(6);
   var inPenaltyBox     = new Array(6);
 
-  var Questions     = new Array();
+  var popQuestions     = new Array();
   var scienceQuestions = new Array();
   var sportsQuestions  = new Array();
   var rockQuestions    = new Array();
@@ -47,19 +47,11 @@ exports.Game = function() {
     return categories.Rock;
   };
 
-  this.createRockQuestion = function(index){
-    return "Rock Question "+index;
-  };
-
   for(var i = 0; i < 50; i++){
-    Questions.push(" Question "+i);
-    scienceQuestions.push("Science Question "+i);
-    sportsQuestions.push("Sports Question "+i);
-    rockQuestions.push(this.createRockQuestion(i));
-  };
-
-  this.isPlayable = function(howManyPlayers){
-    return howManyPlayers >= 2;
+    popQuestions.push("Pop Question " + i);
+    scienceQuestions.push("Science Question " + i);
+    sportsQuestions.push("Sports Question " + i);
+    rockQuestions.push("Rock Question" + i);
   };
 
   this.add = function(playerName){
@@ -81,7 +73,7 @@ exports.Game = function() {
 
   var askQuestion = function(){
     if(currentCategory() == categories.Pop)
-      console.log(Questions.shift());
+      console.log(popQuestions.shift());
     if(currentCategory() == categories.Science)
       console.log(scienceQuestions.shift());
     if(currentCategory() == categories.Sports)
