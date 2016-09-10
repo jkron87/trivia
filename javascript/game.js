@@ -19,19 +19,19 @@ exports.Game = function() {
   };
 
   var categories = {
-    : '',
-    Science: categories.Science,
-    Sports: categories.Sports,
-    Rock: categories.Rock
+    Pop : 'Pop',
+    Science: 'Science',
+    Sports: 'Sports',
+    Rock: 'Rock'
   }
 
   var currentCategory = function(){
     if(places[currentPlayer] == 0)
-      return categories.;
+      return categories.Pop;
     if(places[currentPlayer] == 4)
-      return categories.;
+      return categories.Pop;
     if(places[currentPlayer] == 8)
-      return categories.;
+      return categories.Pop;
     if(places[currentPlayer] == 1)
       return categories.Science;
     if(places[currentPlayer] == 5)
